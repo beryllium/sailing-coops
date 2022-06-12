@@ -16,7 +16,7 @@
     },
     "scripts": {
         "build": [
-            "yarn encore prod || ( echo \"Could not generate Webpack assets\" && exit )",
+            "yarn encore dev || ( echo \"Could not generate Webpack assets\" && exit )",
             "sculpin generate --env=prod --output-dir docs || ( echo \"Could not generate the site\" && exit )"
         ],
         "sculpin-watch": [
