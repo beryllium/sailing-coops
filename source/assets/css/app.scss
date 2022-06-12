@@ -4,23 +4,24 @@ p {
   @apply pb-4;
 }
 
-a {
-  @apply text-blue-700;
-}
-
-
 a:hover {
   @apply text-blue-400;
-}
-
-a:visited {
-  @apply text-purple-500;
 }
 
 nav a,
 nav a:hover,
 nav a:visited {
   @apply text-white;
+}
+
+.directory a,
+.directory a:hover,
+.directory a:visited {
+  @apply text-white;
+}
+
+.directory a:hover {
+  @apply bg-red-600;
 }
 
 .img-flip {
