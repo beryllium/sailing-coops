@@ -11,7 +11,7 @@
                 <div class="uppercase tracking-wide text-2xl text-white font-bold">{{ site.title }}</div>
                 <a href="{{ page.product_link|default('#') }}" class="block mt-1 text-xl leading-tight font-semibold text-white visited:text-white hover:underline leading-relaxed">{{ page.product_lede }}</a>
                 <hr>
-                <p class="mt-2 text-lg text-gray-200 leading-snug">{{ page.product_blurb }}</p>
+                <p class="mt-2 text-lg text-gray-200 leading-snug">{{ page.product_blurb|nl2br }}</p>
             </div>
             </div>
         </header>
