@@ -16,8 +16,19 @@
     },
     "scripts": {
         "build": [
-            "yarn encore dev || ( echo \"Could not generate Webpack assets\" && exit )",
+            "@yarn-build",
+            "@sculpin-build"
+        ],
+        "sculpin-build": [
             "sculpin generate --env=prod --output-dir docs || ( echo \"Could not generate the site\" && exit )"
+        ],
+        "yarn-build": [
+            "yarn encore dev || ( echo \"Could not generate Webpack assets\" && exit )"
+        ],
+        "publish": [
+            "git co main",
+            "@build",
+            "git add docs && git commit -m 'Publishing' && git push"
         ],
         "sculpin-watch": [
             "Composer\\Config::disableProcessTimeout",
@@ -27,5 +38,10 @@
             "Composer\\Config::disableProcessTimeout",
             "yarn encore dev --watch"
         ]
+    },
+    "config": {
+        "allow-plugins": {
+            "sculpin/sculpin-theme-composer-plugin": true
+        }
     }
 }
