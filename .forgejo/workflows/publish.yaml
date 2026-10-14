@@ -1,0 +1,18 @@
+name: Publish
+on:
+    push:
+        branches: [main]
+
+jobs:
+    publish:
+        runs-on: codeberg-tiny
+        steps:
+            #- uses: actions/checkout@v7
+            #- run: |
+                # do the site generator stuff here
+            - uses: actions/git-pages@v2
+              with:
+                  site: https://www.sailingcoops.com/
+                  server: codeberg.page
+                  source: docs/
+                  pretty-urls: true
