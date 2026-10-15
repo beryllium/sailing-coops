@@ -14,6 +14,6 @@ jobs:
               with:
                   site: https://www.sailingcoops.com/
                   server: codeberg.page
-                  token: ${{ forge.token }}
+                  token: ${{ forgejo.token }}
                   source: docs/
                   pretty-urls: true
